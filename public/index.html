@@ -1,0 +1,1086 @@
+ <!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PackSmart | Your Smart Travel Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+
+<div class="logo">
+    <span>✈</span> PackSmart
+</div>
+
+<nav>
+    <a href="#planner">Plan Trip</a>
+    <a href="#features">Features</a>
+    <a href="#results">My Plan</a>
+    <a href="#savedTrips">Saved Trips</a>
+</nav>
+
+<button class="nav-btn" onclick="scrollToPlanner()">
+    Start Planning
+</button>
+
+
+</header>
+
+<section class="hero">
+
+
+<div class="hero-content">
+
+    <div class="badge">
+        ✨ Smart Travel Planning
+    </div>
+
+    <h1>
+        Travel smarter.<br>
+        <span>Pack better.</span>
+    </h1>
+
+    <p>
+        PackSmart creates a personalized travel plan with
+        packing essentials, live weather, nearby attractions,
+        smart alerts and trip insights.
+    </p>
+
+    <button class="hero-btn" onclick="scrollToPlanner()">
+        Create My Smart Trip
+        <span>→</span>
+    </button>
+
+    <div class="hero-stats">
+
+        <div>
+            <strong>Smart</strong>
+            <small>Packing</small>
+        </div>
+
+        <div>
+            <strong>Live</strong>
+            <small>Weather</small>
+        </div>
+
+        <div>
+            <strong>Nearby</strong>
+            <small>Attractions</small>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="hero-card">
+
+    <div class="floating-icon">🧳</div>
+
+    <div class="mini-card">
+        <span>Trip readiness</span>
+        <strong>92%</strong>
+    </div>
+
+    <div class="travel-illustration">
+        ✈️
+    </div>
+
+    <div class="mini-route">
+
+        <span>📍</span>
+
+        <div>
+            <small>Next adventure</small>
+            <strong>Anywhere you want</strong>
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<section class="planner-section" id="planner">
+
+
+<div class="section-heading">
+
+    <span>STEP 01</span>
+
+    <h2>Tell us about your trip</h2>
+
+    <p>
+        Give PackSmart a few details and we'll build your
+        personalized travel plan.
+    </p>
+
+</div>
+
+
+<form id="tripForm">
+
+
+    <div class="form-card">
+
+        <div class="form-title">
+            <span>📍</span>
+            Destination
+        </div>
+
+        <label>
+            Where are you going?
+        </label>
+
+        <input
+            type="text"
+            id="destination"
+            placeholder="e.g. Goa, Paris, Manali, Dubai"
+            required
+        >
+
+        <small class="input-hint">
+            Enter a city, tourist destination or place.
+        </small>
+
+    </div>
+
+
+    <div class="form-grid">
+
+        <div class="form-card">
+
+            <div class="form-title">
+                🎯 Trip type
+            </div>
+
+            <select id="tripType" required>
+
+                <option value="">
+                    Select trip type
+                </option>
+
+                <option value="Vacation">
+                    Vacation
+                </option>
+
+                <option value="Business">
+                    Business
+                </option>
+
+                <option value="Adventure">
+                    Adventure
+                </option>
+
+                <option value="Family">
+                    Family
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-card">
+
+            <div class="form-title">
+                👥 Travelling with
+            </div>
+
+            <select id="travellerType" required>
+
+                <option value="">
+                    Select traveller type
+                </option>
+
+                <option value="Solo">
+                    Solo
+                </option>
+
+                <option value="Couple">
+                    Couple
+                </option>
+
+                <option value="Family">
+                    Family
+                </option>
+
+                <option value="Friends">
+                    Friends
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <div class="form-card">
+
+        <div class="form-title">
+            📅 Travel dates
+        </div>
+
+        <div class="date-grid">
+
+            <div>
+
+                <label>
+                    Start date
+                </label>
+
+                <input
+                    type="date"
+                    id="startDate"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    End date
+                </label>
+
+                <input
+                    type="date"
+                    id="endDate"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="form-card">
+
+        <div class="form-title">
+            🌤️ Expected weather
+        </div>
+
+        <div class="weather-options">
+
+            <label class="option-card">
+
+                <input
+                    type="radio"
+                    name="weather"
+                    value="Hot"
+                >
+
+                <span>☀️</span>
+
+                <strong>
+                    Hot
+                </strong>
+
+            </label>
+
+
+            <label class="option-card">
+
+                <input
+                    type="radio"
+                    name="weather"
+                    value="Cold"
+                >
+
+                <span>❄️</span>
+
+                <strong>
+                    Cold
+                </strong>
+
+            </label>
+
+
+            <label class="option-card">
+
+                <input
+                    type="radio"
+                    name="weather"
+                    value="Rainy"
+                >
+
+                <span>🌧️</span>
+
+                <strong>
+                    Rainy
+                </strong>
+
+            </label>
+
+
+            <label class="option-card">
+
+                <input
+                    type="radio"
+                    name="weather"
+                    value="Moderate"
+                >
+
+                <span>🌤️</span>
+
+                <strong>
+                    Moderate
+                </strong>
+
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <div class="form-card">
+
+        <div class="form-title">
+            🎒 What are you planning to do?
+        </div>
+
+        <div class="activity-grid">
+
+            <label class="activity-card">
+
+                <input
+                    type="checkbox"
+                    value="Beach"
+                >
+
+                <span>🏖️</span>
+
+                <strong>
+                    Beach
+                </strong>
+
+                <small>
+                    Sun & water
+                </small>
+
+            </label>
+
+
+            <label class="activity-card">
+
+                <input
+                    type="checkbox"
+                    value="Hiking"
+                >
+
+                <span>🥾</span>
+
+                <strong>
+                    Hiking
+                </strong>
+
+                <small>
+                    Trails & adventure
+                </small>
+
+            </label>
+
+
+            <label class="activity-card">
+
+                <input
+                    type="checkbox"
+                    value="Sightseeing"
+                >
+
+                <span>📸</span>
+
+                <strong>
+                    Sightseeing
+                </strong>
+
+                <small>
+                    Explore places
+                </small>
+
+            </label>
+
+
+            <label class="activity-card">
+
+                <input
+                    type="checkbox"
+                    value="Business"
+                >
+
+                <span>💼</span>
+
+                <strong>
+                    Business
+                </strong>
+
+                <small>
+                    Work travel
+                </small>
+
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <div class="form-card">
+
+        <div class="form-title">
+            💰 Estimated budget
+        </div>
+
+        <div class="budget-grid">
+
+            <div>
+
+                <label>
+                    Budget per person
+                </label>
+
+                <select id="budget">
+
+                    <option value="Low">
+                        Budget Friendly
+                    </option>
+
+                    <option
+                        value="Medium"
+                        selected
+                    >
+                        Moderate
+                    </option>
+
+                    <option value="High">
+                        Premium
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    Number of travellers
+                </label>
+
+                <input
+                    type="number"
+                    id="travellers"
+                    value="1"
+                    min="1"
+                    max="20"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button
+        type="submit"
+        class="generate-btn"
+    >
+
+        <span>✨</span>
+
+        Generate My Smart Trip
+
+        <span>→</span>
+
+    </button>
+
+</form>
+
+
+</section>
+
+<section
+    class="results-section"
+    id="results"
+>
+
+
+<div class="section-heading">
+
+    <span>
+        YOUR SMART TRIP
+    </span>
+
+    <h2 id="resultTitle">
+        Your personalized travel dashboard
+    </h2>
+
+    <p id="resultSubtitle">
+        Generate your trip to see your recommendations.
+    </p>
+
+</div>
+
+
+<div class="dashboard-grid">
+
+
+    <div class="dashboard-card weather-card">
+
+        <div class="card-label">
+            LIVE WEATHER
+        </div>
+
+        <div class="weather-main">
+
+            <div id="weatherIcon">
+                🌤️
+            </div>
+
+            <div>
+
+                <strong id="temperature">
+                    --°C
+                </strong>
+
+                <span id="weatherDescription">
+                    Loading...
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="weather-details">
+
+            <span>
+                💧
+                <b id="humidity">--</b>
+                % humidity
+            </span>
+
+            <span>
+                💨
+                <b id="wind">--</b>
+                km/h wind
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="dashboard-card score-card">
+
+        <div class="card-label">
+            TRIP READINESS
+        </div>
+
+        <div class="score-circle">
+
+            <strong id="readinessScore">
+                0%
+            </strong>
+
+        </div>
+
+        <p id="scoreMessage">
+            Complete your packing list to improve your score.
+        </p>
+
+    </div>
+
+
+    <div class="dashboard-card budget-card">
+
+        <div class="card-label">
+            BUDGET ESTIMATE
+        </div>
+
+        <div class="budget-result">
+
+            <span>₹</span>
+
+            <strong id="budgetAmount">
+                0
+            </strong>
+
+        </div>
+
+        <p id="budgetMessage">
+            Estimated trip budget.
+        </p>
+
+    </div>
+
+</div>
+
+
+<div
+    class="smart-alert"
+    id="smartAlert"
+>
+
+    💡
+    <span>
+        Generate your trip to receive smart travel alerts.
+    </span>
+
+</div>
+
+
+<div class="results-layout">
+
+
+    <div class="packing-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-kicker">
+                    SMART PACKING
+                </span>
+
+                <h3>
+                    Your personalized checklist
+                </h3>
+
+            </div>
+
+            <div
+                class="progress-number"
+                id="progressText"
+            >
+                0%
+            </div>
+
+        </div>
+
+
+        <div class="progress-track">
+
+            <div id="progressBar"></div>
+
+        </div>
+
+
+        <div id="packingList"></div>
+
+    </div>
+
+
+    <div class="tips-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span class="panel-kicker">
+                    PACKSMART AI
+                </span>
+
+                <h3>
+                    Smart tip
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="tip-box">
+
+            <span>
+                💡
+            </span>
+
+            <p id="smartTip">
+                Your personalized travel tip will appear here.
+            </p>
+
+        </div>
+
+
+        <div class="trip-info">
+
+
+            <div>
+
+                <span>
+                    📍
+                </span>
+
+                <div>
+
+                    <small>
+                        Destination
+                    </small>
+
+                    <strong id="summaryDestination">
+                        --
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    👥
+                </span>
+
+                <div>
+
+                    <small>
+                        Travelling
+                    </small>
+
+                    <strong id="summaryTraveller">
+                        --
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    📅
+                </span>
+
+                <div>
+
+                    <small>
+                        Duration
+                    </small>
+
+                    <strong id="summaryDuration">
+                        --
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="save-btn"
+            id="saveTripBtn"
+        >
+            💾 Save This Trip
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="places-section">
+
+    <div class="places-header">
+
+        <div>
+
+            <span class="panel-kicker">
+                EXPLORE
+            </span>
+
+            <h2>
+                Places worth visiting nearby
+            </h2>
+
+            <p>
+                PackSmart found these attractions around your destination.
+            </p>
+
+        </div>
+
+        <span
+            class="places-count"
+            id="placesCount"
+        >
+            0 places
+        </span>
+
+    </div>
+
+
+    <div
+        id="placesGrid"
+        class="places-grid"
+    ></div>
+
+</div>
+
+
+<div class="itinerary-section">
+
+    <div class="places-header">
+
+        <div>
+
+            <span class="panel-kicker">
+                SMART ITINERARY
+            </span>
+
+            <h2>
+                Your suggested trip flow
+            </h2>
+
+            <p>
+                A simple day-wise plan based on your trip duration.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="itinerary"
+        class="itinerary-grid"
+    ></div>
+
+</div>
+
+
+<button
+    class="new-trip-btn"
+    onclick="scrollToPlanner()"
+>
+    ← Plan Another Trip
+</button>
+
+
+</section>
+
+<section
+    class="saved-trips-section"
+    id="savedTrips"
+>
+
+
+<div class="section-heading">
+
+    <span>
+        MY TRAVEL MEMORY
+    </span>
+
+    <h2>
+        My Saved Trips
+    </h2>
+
+    <p>
+        Your saved PackSmart plans are securely stored in MongoDB
+        and can be viewed anytime.
+    </p>
+
+</div>
+
+
+<div
+    id="savedTripsContainer"
+    class="saved-trips-container"
+>
+
+    <div class="saved-empty">
+
+        <div class="saved-empty-icon">
+            🧳
+        </div>
+
+        <h3>
+            Loading your saved trips...
+        </h3>
+
+        <p>
+            Your saved travel plans will appear here.
+        </p>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<section
+    class="features-section"
+    id="features"
+>
+
+
+<div class="section-heading">
+
+    <span>
+        WHY PACKSMART?
+    </span>
+
+    <h2>
+        More than a packing checklist.
+    </h2>
+
+    <p>
+        One place to prepare, explore and organize your next trip.
+    </p>
+
+</div>
+
+
+<div class="features-grid">
+
+
+    <div class="feature">
+
+        <div>
+            🧠
+        </div>
+
+        <h3>
+            Personalized Packing
+        </h3>
+
+        <p>
+            Packing recommendations change according to weather,
+            activities, trip type and traveller type.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div>
+            📍
+        </div>
+
+        <h3>
+            Nearby Attractions
+        </h3>
+
+        <p>
+            Discover interesting places around your destination
+            without manually searching for every attraction.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div>
+            🌦️
+        </div>
+
+        <h3>
+            Live Weather
+        </h3>
+
+        <p>
+            Check current weather conditions before deciding
+            what to pack.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div>
+            ⚠️
+        </div>
+
+        <h3>
+            Smart Alerts
+        </h3>
+
+        <p>
+            Get warnings for combinations such as rain + hiking
+            or business + cold weather.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div>
+            💰
+        </div>
+
+        <h3>
+            Budget Estimator
+        </h3>
+
+        <p>
+            Get a quick estimated budget based on trip style,
+            travellers and duration.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div>
+            🗓️
+        </div>
+
+        <h3>
+            Trip Itinerary
+        </h3>
+
+        <p>
+            Turn your trip duration and activities into a simple
+            day-wise travel flow.
+        </p>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<footer>
+
+
+<div class="footer-logo">
+    ✈ PackSmart
+</div>
+
+<p>
+    Plan smarter. Pack lighter. Explore more.
+</p>
+
+<small>
+    Built as a Web Technology Project
+</small>
+
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
